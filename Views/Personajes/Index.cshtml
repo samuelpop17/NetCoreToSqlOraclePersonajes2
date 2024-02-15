@@ -1,0 +1,33 @@
+﻿@model List<Personaje>
+
+
+<h1>Personajes Dependency</h1>
+<p><a asp-controller="Personajes" asp-action="Create">Create</a></p>
+<table class="table-bordered">
+
+    <thead>
+
+    
+    <th>Nombre</th>
+    <th>Imagen</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    
+
+    </thead>
+    <tbody>
+        @foreach (Personaje per in Model)
+        {
+            <tr>
+                <td>@per.Nombre</td>
+                <td><img src="@per.Imagen" width="250px" /></td>
+                <td><p><a asp-controller="Personajes" asp-action="Details" asp-route-id="@per.Id">Detalles</a></p></td>
+                <td><p><a asp-controller="Personajes" asp-action="Update" asp-route-id="@per.Id">Update</a></p></td>
+                <td><p><a asp-controller="Personajes" asp-action="Delete" asp-route-id="@per.Id">Delet  e</a></p></td >
+            </tr>
+        }
+
+
+    </tbody>
+</table>

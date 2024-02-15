@@ -1,0 +1,9 @@
+﻿@model Personaje
+
+<h1>Detalles personaje</h1>
+<p><a asp-controller="Personajes" asp-action="Index">back index</a></p>
+<ul>
+    <li>ID: @Model.Id</li>
+    <li>Personaje:@Model.Nombre</li>
+    <li><img src="@Model.Imagen" width="250px" /></li>
+</ul>
